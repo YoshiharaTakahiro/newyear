@@ -1,0 +1,46 @@
+<head>
+    <title>My A-Frame Scene</title>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script> 
+    <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script> 
+  </head>
+   
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <img id="carpet" src="carpet.jpg">
+        <a-asset-item id="optimerBoldFont" src="https://rawgit.com/mrdoob/three.js/dev/examples/fonts/optimer_bold.typeface.json"></a-asset-item>
+      </a-assets>
+   
+      <a-entity text-geometry="value: Happy; font: #optimerBoldFont; size:1; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12;"
+                position="-12 3 -10"
+                material="color:red;">
+        <a-animation attribute="position" dur="4000" to="-6 3 -25"></a-animation>
+      </a-entity>
+
+      <a-entity text-geometry="value: New; font: #optimerBoldFont; size:1; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12;"
+                position="0 30 -5"
+                material="color:red;">
+        <a-animation attribute="position" dur="6000" to="-1.5 3 -25"></a-animation>
+      </a-entity>
+       
+      <a-entity text-geometry="value: Year; font: #optimerBoldFont; size:1; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12;"
+                position="50 3 -5"
+                material="color:red;">
+        <a-animation attribute="position" dur="8000" to="1.75 3 -25"></a-animation>
+      </a-entity>
+
+      <a-entity text-geometry="value: 2020; font: #optimerBoldFont; size:1; bevelEnabled: true; bevelSize: 0.05; bevelThickness: 0.05; curveSegments: 12;"
+                position="-1.5 1.75 50"
+                material="color:red;">
+        <a-animation easing="ease-out" attribute="position" dur="14000" to="-1.5 1.75 -25"></a-animation>
+      </a-entity>
+
+      <a-plane position="0 0 -2" rotation="-90 0 0" width="6" height="1000" src="#carpet" repeat="6 2000" shadow></a-plane>
+
+      <a-entity camera="userHeight: 1.6">
+        <a-animation easing="ease-out" attribute="position" dur="10000" to="0 1.6 -20"></a-animation>
+      </a-entity>
+
+    </a-scene>
+  </body>
